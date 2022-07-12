@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import HomePage from "./pages/homePage";
+import MovieDetailsPage from './pages/movieDetailsPage'
 
 const sample = {
   adult: false,
@@ -11,6 +11,7 @@ const sample = {
     poster_path: "/iTQHKziZy9pAAY4hHEDCGPaOvFC.jpg",
     backdrop_path: "/d8duYyyC9J5T825Hg7grmaabfxQ.jpg",
   },
+  
   budget: 200000000,
   genres: [
     {
@@ -86,9 +87,14 @@ const sample = {
 const movies = [sample, sample, sample, sample, sample, sample, sample];
 
 const App = () => {
-  return (
-      <HomePage movies={movies} />
-  );
-};
-
+    return (
+        <MovieDetailsPage movie={sample} images={images} />
+        );
+  };
+const images = [
+    "/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg",
+    "/v1QQKq8M0fWxMgSdGOX1aCv8qMB.jpg",
+    "/2iGN0aKHJYD0xQydlfuCUAcgNbO.jpg",
+    "/rjBwhsOzHKUw2NIOrE7aMqjfe6s.jpg",
+  ]
 ReactDOM.render(<App />, document.getElementById("root"));
