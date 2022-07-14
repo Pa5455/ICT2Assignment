@@ -19,7 +19,7 @@ const App = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
         <Route path="/reviews/:id" element={<MovieReviewPage/>} />
-        <Route path="/upcoming/" element={<UpcomingMoviesPage/>} />
+        <Route path="upcoming/" element={<UpcomingMoviesPage/>} />
     
 
       </Routes>
