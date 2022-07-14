@@ -13,13 +13,13 @@ const App = () => {
     <BrowserRouter>
           <SiteHeader />      {/* New Header  */}
       <Routes>
-        <Route path="/movies/favourites" element={<FavouriteMoviesPage/>}
-        />
+        <Route path="/movies/upcoming" element={<UpcomingMoviesPage/>} />
+        <Route path="/movies/favourites" element={<FavouriteMoviesPage/>} />
         <Route path="/movies/:id" element={<MoviePage/>} />
         <Route path="/" element={<HomePage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
         <Route path="/reviews/:id" element={<MovieReviewPage/>} />
-        <Route path="upcoming/" element={<UpcomingMoviesPage/>} />
+        
     
 
       </Routes>
