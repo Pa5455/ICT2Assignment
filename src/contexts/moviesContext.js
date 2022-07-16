@@ -24,7 +24,7 @@ const MoviesContextProvider = (props) => {
 
   const addToMustWatchList = (movie) => {
     setMustWatch([...mustWatch, movie.id] )
-    console.log(mustWatch);
+    console.log(mustWatch); //was for step 4 really but added during step 3, ploughed through it by mistake
   };
 
   return (
