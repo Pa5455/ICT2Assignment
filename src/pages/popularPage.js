@@ -8,7 +8,7 @@ import AddToFavouritesIcon from '../components/cardIcons/addToFavourites'
 
 
 const PopularMovies = (props) => {
-  const {  data, error, isLoading, isError }  = useQuery('popular', getPopular)
+  const {  data, error, isLoading, isError }  = useQuery('toprated', getPopular)
 
   if (isLoading) {
     return <Spinner />
@@ -21,7 +21,7 @@ const PopularMovies = (props) => {
 
   return (
     <PageTemplate
-      title='Popular Movies'
+      title='Top Rated Movies'
       movies={movies}
       action={(movie) => {
         return <AddToFavouritesIcon movie={movie} />

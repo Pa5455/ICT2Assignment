@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const MovieDetails = ( {movie}) => {
+const MovieDetails = ( {movie,cast}) => {
   const classes = useStyles();
   const [drawerOpen, setDrawerOpen] = useState(false); 
   
@@ -121,6 +121,7 @@ const MovieDetails = ( {movie}) => {
       <Drawer anchor="top" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
         <MovieReviews movie={movie} />
       </Drawer>
+      
 
       
     </>
