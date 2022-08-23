@@ -11,6 +11,8 @@ import NavigationIcon from "@material-ui/icons/Navigation";
 import Fab from "@material-ui/core/Fab";
 import Drawer from "@material-ui/core/Drawer";
 import MovieReviews from '../movieReviews'
+import FaceIcon from '@material-ui/icons/Face';
+
 
 const useStyles = makeStyles((theme) => ({
   chipRoot: {
@@ -44,7 +46,8 @@ const useStyles = makeStyles((theme) => ({
 
 const MovieDetails = ( {movie}) => {
   const classes = useStyles();
-  const [drawerOpen, setDrawerOpen] = useState(false); // New
+  const [drawerOpen, setDrawerOpen] = useState(false); 
+  
 
   return (
     <>
@@ -78,7 +81,33 @@ const MovieDetails = ( {movie}) => {
         />
         <Chip label={`Released: ${movie.release_date}`} />
       </Paper>
+      <div className={classes.chipRoot}>
+      <Paper component="ul" className={classes.chipSet}>
+        <li>
+          <Chip label="Countries" className={classes.chipLabel} color="primary" />
+        </li>
+          {movie.production_countries.map((g) => (
+         <li key={g.name}>
+            <Chip label={g.name} className={classes.chip} />
+         </li>
+        ))}
+      </Paper>
       </div>
+      </div>
+
+      <div className={classes.chipRoot}>
+      <Paper component="ul" className={classes.chipSet}>
+          <li>
+          <Chip icon={<FaceIcon />} label="Production Companies"  className={classes.chipLabel} color="secondary" />
+          </li>
+          {movie.production_companies.map((g) => (
+         <li key={g.name}>
+            <Chip label={g.name} className={classes.chip} />
+         </li>
+        ))}
+        </Paper>
+      </div>
+
       {/* New */}
       <Fab    
         color="secondary"
@@ -92,6 +121,8 @@ const MovieDetails = ( {movie}) => {
       <Drawer anchor="top" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
         <MovieReviews movie={movie} />
       </Drawer>
+
+      
     </>
   );
 };
